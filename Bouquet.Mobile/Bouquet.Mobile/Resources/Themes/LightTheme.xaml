@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   x:Class="Bouquet.Mobile.Resources.Themes.LightTheme">
+    <Color x:Key="Primary">#58b062</Color>
+    <Color x:Key="AccentColor">#e4e864</Color>
+    <Color x:Key="ButtonColor">#58b062</Color>
+    <Color x:Key="PageBackgroundColor">#f7f7f7</Color>
+    <Color x:Key="SecondPageBackgroundColor">#58b062</Color>
+    <Color x:Key="MainBackgroundColor">#efefef</Color>
+    <Color x:Key="SecondBackgroundColor">White</Color>
+    <Color x:Key="ThirdBackgroundColor">White</Color>
+    <Color x:Key="FourthBackgroundColor">White</Color>
+    <Color x:Key="FifthBackgroundColor">#09275d</Color>
+    <Color x:Key="WhiteTextColor">White</Color>
+    <Color x:Key="GrayTextColor">#9f9f9f</Color>
+    <Color x:Key="DynamicTextColor">#1f1f1f</Color>
+    <Color x:Key="GrayIconColor">#9f9f9f</Color>
+    <Color x:Key="DynamicIconColor">#1f1f1f</Color>
+    <Color x:Key="SwitchButtonColor">#808080</Color>
+    <Color x:Key="UnselectedColor">White</Color>
+    <Color x:Key="DisabledColor">#B4FFFFFF</Color>
+    <Color x:Key="Transparent">Transparent</Color>
+    <Color x:Key="NavColor">#58b062</Color>
+    <Color x:Key="HyperlinksColor">Blue</Color>
+    <Color x:Key="RedColor">Red</Color>
+    <Color x:Key="GreenColor">Green</Color>
+    <ImageSource x:Key="Robot">"Resources/Robo_light.png"</ImageSource>
+</ResourceDictionary>

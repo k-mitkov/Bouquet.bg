@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Bouquet.Mobile.Views.SettingsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:b="clr-namespace:Bouquet.Mobile.Converters"
+    xmlns:h="clr-namespace:Bouquet.Mobile.Helpers"
+    xmlns:switch="clr-namespace:Bouquet.Mobile.CustomControls"
+    xmlns:toolkit="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:vm="clr-namespace:Bouquet.Mobile.ViewModels"
+    BackgroundColor="{DynamicResource PageBackgroundColor}">
+    <Shell.TitleView>
+        <Label
+            FontAttributes="Bold"
+            Style="{StaticResource mainTabTittleStyle}"
+            Text="{toolkit:Translate strSettings}"
+            TextColor="{DynamicResource WhiteTextColor}" />
+    </Shell.TitleView>
+
+    <ContentPage.BindingContext>
+        <vm:SettingsViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Behaviors>
+        <b:EventToCommandBehavior Command="{Binding OnAppearingCommand}" EventName="Appearing" />
+    </ContentPage.Behaviors>
+
+    <Grid IsEnabled="{Binding IsBusy, Converter={StaticResource oppositeConverter}}" RowDefinitions="*,Auto,Auto">
+        <StackLayout
+            Grid.Row="0"
+            Margin="15"
+            Orientation="Vertical"
+            VerticalOptions="Center">
+
+            <Frame Padding="5" BackgroundColor="{DynamicResource SecondBackgroundColor}">
+                <StackLayout Orientation="Horizontal">
+                    <Image Margin="5,5,0,0" VerticalOptions="Center">
+                        <Image.Source>
+                            <FontImageSource
+                                FontFamily="materialdesignicons-webfont"
+                                Glyph="{x:Static h:IconFont.Home}"
+                                Size="24"
+                                Color="{DynamicResource GrayIconColor}" />
+                        </Image.Source>
+                    </Image>
+
+                    <Picker
+                        x:Name="ObjectsList"
+                        Title="{toolkit:Translate strObjects}"
+                        HorizontalOptions="FillAndExpand"
+                        ItemDisplayBinding="{Binding Name}"
+                        ItemsSource="{Binding Objects, Mode=OneWay}"
+                        SelectedItem="{Binding SelectedObject}"
+                        Style="{StaticResource pickerStyle}"
+                        Visual="Material" />
+                </StackLayout>
+            </Frame>
+            <Frame Padding="5" BackgroundColor="{DynamicResource SecondBackgroundColor}">
+                <StackLayout Orientation="Horizontal">
+                    <Image
+                        Margin="5,0,0,0"
+                        HeightRequest="20"
+                        Source="{Binding SelectedLanguage.FlagSource}"
+                        VerticalOptions="Center" />
+
+                    <Picker
+                        Title="{toolkit:Translate strLanguage}"
+                        HorizontalOptions="FillAndExpand"
+                        ItemDisplayBinding="{Binding Name}"
+                        ItemsSource="{Binding SupportedLanguages}"
+                        SelectedItem="{Binding SelectedLanguage}"
+                        Style="{StaticResource pickerStyle}" />
+                </StackLayout>
+            </Frame>
+
+            <Frame
+                Padding="5"
+                BackgroundColor="{DynamicResource SecondBackgroundColor}"
+                HeightRequest="70">
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                        Margin="5,0,0,0"
+                        Style="{StaticResource labelMediumFontSizeStyle}"
+                        Text="{toolkit:Translate strTheme}"
+                        TextColor="{DynamicResource DynamicTextColor}"
+                        VerticalOptions="Center" />
+
+                    <switch:ThemeCustomSwitch
+                        CornerRadius="20"
+                        HorizontalOptions="EndAndExpand"
+                        IsToggled="{Binding IsThemeButtonToggled}" />
+
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+    </Grid>
+</ContentPage>

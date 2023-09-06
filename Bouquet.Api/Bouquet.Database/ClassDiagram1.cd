@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Bouquet.Database.Entities.Agreement" Collapsed="true">
+    <Position X="2.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACACAAAAAABAAAAAAAAAQAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Entities\Agreement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bouquet.Database.Entities.AnonymousCustomer" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAEgAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\AnonymousCustomer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bouquet.Database.Entities.Bouquet">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAEBQAgAAAAAACAAEQAAAAAAAIAAAAggAAAACE=</HashCode>
+      <FileName>Entities\Bouquet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="FlowerShop" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Colors" />
+      <Property Name="Flowers" />
+      <Property Name="Pictures" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Bouquet.Database.Entities.CartBouquet">
+    <Position X="7.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACIAAAAAAAAAEAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\CartBouquet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Bouquet" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Bouquet.Database.Entities.City" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAEAABAAAAAAIAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\City.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bouquet.Database.Entities.Color" Collapsed="true">
+    <Position X="0.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Entities\Color.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bouquet.Database.Entities.DeliveryDetails" Collapsed="true">
+    <Position X="7.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEDAAAAAABAAAAAAEAAQAgAAAAAAAACAQAAAAAAAAA=</HashCode>
+      <FileName>Entities\DeliveryDetails.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bouquet.Database.Entities.Flower" Collapsed="true">
+    <Position X="2.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Flower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bouquet.Database.Entities.FlowerShop">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAACFAEAAGAAIAAAKAAQAAAAEQAACAAIkAAAAAAA=</HashCode>
+      <FileName>Entities\FlowerShop.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Owner" />
+      <Property Name="ShopConfig" />
+      <Property Name="City" />
+      <Property Name="Agreement" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Workers" />
+      <Property Name="Bouquets" />
+      <Property Name="Orders" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Bouquet.Database.Entities.Order">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAKDAAQEAQAkAAAAAAAAAAgAAMAAAAAAAAAgAEAAAAE=</HashCode>
+      <FileName>Entities\Order.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="User" />
+      <Property Name="AnonymousCustomer" />
+      <Property Name="DeliveryDetails" />
+      <Property Name="FlowerShop" />
+      <Property Name="OrderCart" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Transactions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Bouquet.Database.Entities.OrderCart">
+    <Position X="7.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECABAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\OrderCart.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Bouquets" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Bouquet.Database.Entities.Picture" Collapsed="true">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACIAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Entities\Picture.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bouquet.Database.Entities.ShopConfig" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAAAAAAAAAAAAAAAABAAECAEgAAAAAAE=</HashCode>
+      <FileName>Entities\ShopConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bouquet.Database.Entities.Transaction">
+    <Position X="7.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECABAAAAAAABAAAAAAAAAAAQAAAAEAAAIAAAAAEAA=</HashCode>
+      <FileName>Entities\Transaction.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="WalletTo" />
+      <Property Name="Order" />
+      <Property Name="WalletFrom" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Bouquet.Database.Entities.Wallet">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAASAACIAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Wallet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bouquet.Database.Entities.Identity.BouquetRole" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAQAAgAAAEAAAAAAEAAAACAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Entities\Identity\BouquetRole.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="RoleClaims" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Bouquet.Database.Entities.Identity.BouquetRoleClaim" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEQAQAAgAAAAEAAAAAAAAAACAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Entities\Identity\BouquetRoleClaim.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Bouquet.Database.Entities.Identity.BouquetUser" BaseTypeListCollapsed="true">
+    <Position X="4" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAMBAAQAQAAAQAkAEAAAAAKIACACARAAAAAAAQAAAAE=</HashCode>
+      <FileName>Entities\Identity\BouquetUser.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UserInfo" />
+      <Property Name="Wallet" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="WorkPlaces" />
+      <Property Name="OwnedShops" />
+      <Property Name="DeliveryDetails" />
+      <Property Name="Orders" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Bouquet.Database.Entities.Identity.UserInfo" Collapsed="true">
+    <Position X="2.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAEAAAAQAAAAIAAAAQAgAAAIAAAAGAAAABAAAAAk=</HashCode>
+      <FileName>Entities\Identity\UserInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bouquet.Database.Entities.Payments.Card">
+    <Position X="2.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAABAAAAAAAAAAAgAAAAAIAAAAQAAAAgAAAA=</HashCode>
+      <FileName>Entities\Payments\Card.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="User" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Payments" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Bouquet.Database.Entities.Payments.Payment" Collapsed="true">
+    <Position X="0.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EABCAAAAAAAAAAAAAAEAAACAAAAAABAAAAAAAAgAAAA=</HashCode>
+      <FileName>Entities\Payments\Payment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

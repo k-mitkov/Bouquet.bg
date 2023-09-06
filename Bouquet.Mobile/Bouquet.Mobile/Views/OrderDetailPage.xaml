@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Bouquet.Mobile.Views.OrderDetailPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:h="clr-namespace:Bouquet.Mobile.Helpers"
+    xmlns:toolkit="http://xamarin.com/schemas/2020/toolkit"
+    BackgroundColor="{DynamicResource PageBackgroundColor}">
+
+    <Shell.TitleView>
+        <Label
+            FontAttributes="Bold"
+            Style="{StaticResource mainTabTittleStyle}"
+            Text="{toolkit:Translate strDetails}"
+            TextColor="{DynamicResource WhiteTextColor}" />
+    </Shell.TitleView>
+
+    <Grid
+        Margin="0"
+        IsEnabled="{Binding IsBusy, Converter={StaticResource oppositeConverter}}"
+        RowDefinitions="auto,*,auto">
+        <StackLayout
+            Grid.Row="0"
+            Margin="5,0"
+            Orientation="Vertical"
+            VerticalOptions="FillAndExpand">
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    FontAttributes="Bold"
+                    Text="{Binding Order.Id}"
+                    TextColor="{DynamicResource DynamicTextColor}" />
+                <Label
+                    Margin="0,0,10,0"
+                    HorizontalOptions="EndAndExpand"
+                    Text="{Binding Order.Price, Converter={StaticResource priceConverter}}"
+                    TextColor="{DynamicResource DynamicTextColor}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{toolkit:Translate strStatus}" TextColor="{DynamicResource DynamicTextColor}" />
+                    <Label
+                        Margin="0,0,20,0"
+                        FontAttributes="Bold"
+                        Text="{Binding Order.Status, Converter={StaticResource statusConverter}}"
+                        TextColor="{DynamicResource DynamicTextColor}" />
+                </StackLayout>
+                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                    <Label Text="{toolkit:Translate strDelivery}" TextColor="{DynamicResource DynamicTextColor}" />
+                    <Label
+                        Margin="0,0,20,0"
+                        FontAttributes="Bold"
+                        Text="{Binding Order.Type, Converter={StaticResource typeConverter}}"
+                        TextColor="{DynamicResource DynamicTextColor}" />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="{toolkit:Translate strOrderer}" TextColor="{DynamicResource DynamicTextColor}" />
+                <Label
+                    Margin="0,0,10,0"
+                    HorizontalOptions="StartAndExpand"
+                    Text="{Binding Order.Name}"
+                    TextColor="{DynamicResource DynamicTextColor}" />
+                <Label
+                    HorizontalOptions="StartAndExpand"
+                    Text="{toolkit:Translate strPhoneNumber}"
+                    TextColor="{DynamicResource DynamicTextColor}" />
+                <Label
+                    Margin="0,0,10,0"
+                    HorizontalOptions="EndAndExpand"
+                    Text="{Binding Order.PhoneNumber}"
+                    TextColor="{DynamicResource DynamicTextColor}" />
+            </StackLayout>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{toolkit:Translate strReciver}" TextColor="{DynamicResource DynamicTextColor}" />
+                    <Label
+                        Margin="0,0,10,0"
+                        HorizontalOptions="StartAndExpand"
+                        Text="{Binding Order.ReciverName}"
+                        TextColor="{DynamicResource DynamicTextColor}" />
+                    <Label
+                        HorizontalOptions="StartAndExpand"
+                        Text="{toolkit:Translate strPhoneNumber}"
+                        TextColor="{DynamicResource DynamicTextColor}" />
+                    <Label
+                        Margin="0,0,10,0"
+                        HorizontalOptions="EndAndExpand"
+                        Text="{Binding Order.ReciverPhoneNumber}"
+                        TextColor="{DynamicResource DynamicTextColor}" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{toolkit:Translate strAddress}" TextColor="{DynamicResource DynamicTextColor}" />
+                    <Label
+                        Margin="0,0,20,0"
+                        FontAttributes="Bold"
+                        Text="{Binding Order.Address}"
+                        TextColor="{DynamicResource DynamicTextColor}" />
+                </StackLayout>
+                <StackLayout.Triggers>
+                    <DataTrigger
+                        Binding="{Binding Order.Type}"
+                        TargetType="StackLayout"
+                        Value="1">
+                        <Setter Property="IsVisible" Value="False" />
+                    </DataTrigger>
+                </StackLayout.Triggers>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="{toolkit:Translate strDescription}" TextColor="{DynamicResource DynamicTextColor}" />
+                <Label
+                    Margin="0,0,10,0"
+                    LineBreakMode="TailTruncation"
+                    MaxLines="2"
+                    Text="{Binding Order.Description}"
+                    TextColor="{DynamicResource DynamicTextColor}" />
+            </StackLayout>
+        </StackLayout>
+        <CollectionView
+            Grid.Row="1"
+            HorizontalOptions="FillAndExpand"
+            ItemsSource="{Binding Order.Bouquets, Mode=TwoWay}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="5">
+                        <Frame
+                            Margin="0"
+                            Padding="10"
+                            BackgroundColor="{DynamicResource MainBackgroundColor}"
+                            BorderColor="{DynamicResource AccentColor}"
+                            HeightRequest="80">
+                            <Grid Grid.Column="1" ColumnDefinitions="*, 3*">
+                                <Image
+                                    Grid.Column="0"
+                                    Margin="0"
+                                    Aspect="AspectFit"
+                                    HorizontalOptions="Fill"
+                                    Source="{Binding Bouquet.Picture}"
+                                    VerticalOptions="Fill" />
+                                <StackLayout Grid.Column="1" Orientation="Vertical">
+                                    <Label
+                                        FontAttributes="Bold"
+                                        Text="{Binding Bouquet.Name}"
+                                        TextColor="{DynamicResource DynamicTextColor}" />
+                                    <StackLayout Grid.Column="1" Orientation="Horizontal">
+                                        <Label
+                                            FontAttributes="Bold"
+                                            Text="{toolkit:Translate strCount}"
+                                            TextColor="{DynamicResource DynamicTextColor}" />
+                                        <Label
+                                            Margin="0"
+                                            Text="{Binding Count}"
+                                            TextColor="{DynamicResource DynamicTextColor}" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Grid Grid.Row="2" Margin="10">
+            <Button Command="{Binding ChangeStatusCommand}" Text="{Binding ButtonText}">
+                <Button.Triggers>
+                    <DataTrigger
+                        Binding="{Binding Order.Status}"
+                        TargetType="Button"
+                        Value="4">
+                        <Setter Property="IsVisible" Value="False" />
+                    </DataTrigger>
+                </Button.Triggers>
+
+            </Button>
+        </Grid>
+        <ActivityIndicator
+            Grid.RowSpan="2"
+            IsRunning="{Binding IsBusy}"
+            Style="{StaticResource ActivityIndicatorStyle}" />
+    </Grid>
+
+</ContentPage>
